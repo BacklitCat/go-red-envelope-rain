@@ -1,0 +1,15 @@
+Name: user-api
+Host: 0.0.0.0
+Port: 7050
+Mysql:
+  DataSource: red_envelope_rain:123456@tcp(127.0.0.1:3306)/red_envelope_rain
+CacheRedis:
+  - Host: 127.0.0.1:6379
+    Type: node
+Auth:
+  AccessSecret: "1234567890"
+  AccessExpire: 3600
+Prometheus:
+  Host: 127.0.0.1
+  Port: 7051
+  Path: /metrics

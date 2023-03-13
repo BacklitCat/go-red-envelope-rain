@@ -1,0 +1,15 @@
+Name: user.rpc
+ListenOn: 0.0.0.0:7052
+Etcd:
+  Hosts:
+  - 127.0.0.1:2379
+  Key: user.rpc
+Mysql:
+  DataSource: red_envelope_rain:123456@tcp(127.0.0.1:3306)/red_envelope_rain
+CacheRedis:
+  - Host: 127.0.0.1:6379
+    Type: node
+Prometheus:
+  Host: 127.0.0.1
+  Port: 7053
+  Path: /metrics

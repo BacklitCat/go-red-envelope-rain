@@ -1,0 +1,32 @@
+syntax = "v1"
+
+type (
+	checkResponse {
+		Account   string `json:"account"`
+		Remaining int    `json:"remaining"`
+		Balance   int    `json:"balance"`
+	}
+
+	openResponse {
+		Account   string `json:"account"`
+		Amount    int    `json:"amount"`
+		Remaining int    `json:"remaining"`
+		Balance   int    `json:"balance"`
+	}
+)
+
+@server(
+	jwt: Auth
+)
+service rain-api {
+	@handler checkStatus
+	post /rain/checkStatus returns (checkResponse)
+}
+
+@server(
+	jwt: Auth
+)
+service rain-api {
+	@handler openEnvelope
+	post /rain/openEnvelope returns (openResponse)
+}

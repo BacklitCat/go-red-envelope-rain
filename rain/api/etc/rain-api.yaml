@@ -1,0 +1,20 @@
+Name: rain-api
+Host: 0.0.0.0
+Port: 7054
+Mysql:
+  DataSource: red_envelope_rain:123456@tcp(127.0.0.1:3306)/red_envelope_rain?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+CacheRedis:
+  - Host: 127.0.0.1:6379
+    Type: node
+Auth:
+  AccessSecret: "1234567890"
+  AccessExpire: 300
+UserRpc:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: user.rpc
+Prometheus:
+  Host: 127.0.0.1
+  Port: 7055
+  Path: /metrics
